@@ -32,10 +32,8 @@ public class Main {
         int death = 8;
         int born = 17;
         int diff = born - death;
-        int populationInYear = 0;
         for (int year = 1; year <= 10; year++) {
-            populationInYear = diff * population / 1000;
-            population = populationInYear + population;
+            population = population + diff * population / 1000;
             System.out.println("Год " + year + " , численность населения составляет " + population);
         }
 
