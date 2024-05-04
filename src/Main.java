@@ -3,15 +3,16 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("\nЗадание 1");
-        int cash = 15_000;
-        int total = 0;
-        int month = 1;
-        while (total < 2_459_000) {
-            total = total + cash;
-            month++;
+        {
+            int deposit = 15_000;
+            int total = 0;
+            int month = 0;
+            while (total <= 2_459_000) {
+                total += deposit;
+                month++;
+                System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
+            }
         }
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
-
 
         System.out.println("\nЗадание 2");
         int i = 1;
@@ -65,28 +66,26 @@ public class Main {
         {
             int deposit = 15_000;
             int depositPercent = 7;
-            int Month = 0;
-            while (Month <= 108) {
+            int period = 9*12;
+            for (int Month = 1; Month < period; Month++) {
                 deposit = deposit + (deposit * depositPercent / 100);
-                Month++;
                 if (Month % 6 == 0) {
                     System.out.println("Месяц " + Month + ", сумма накоплений равна " + deposit + " рублей");
                 }
             }
         }
         System.out.println("\nЗадание 7");
-        for (int dayNumber = 7; dayNumber <= 31; dayNumber++) {
-            if (dayNumber % 7 == 0) {
-                System.out.println("Сегодня пятница " + dayNumber + " число. Необходимо подготовить отчет");
-            }
+        int dayNumber = 7;
+        for ( ; dayNumber <= 31; dayNumber += 7) {
+            System.out.println("Сегодня пятница " + dayNumber + " число. Необходимо подготовить отчет");
         }
         System.out.println("\nЗадание 8");
-        int now = 2024;
-        int befor = now - 200;
-        int after = now + 100;
-        for (int comet = befor; comet < after; comet++) {
-            if (comet % 79 == 0) {
-                System.out.println(comet);
+        int nowYear = 2024;
+        int yearBefor = nowYear - 200;
+        int yearAfter = nowYear + 100;
+        for (int cometYear = yearBefor; cometYear < yearAfter; cometYear++) {
+            if (cometYear % 79 == 0) {
+                System.out.println(cometYear);
             }
         }
     }
